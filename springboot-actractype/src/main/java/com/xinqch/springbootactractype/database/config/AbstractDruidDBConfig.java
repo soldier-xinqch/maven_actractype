@@ -43,11 +43,9 @@ public abstract class AbstractDruidDBConfig {
 
     private Logger logger = LoggerFactory.getLogger(AbstractDruidDBConfig.class);
 
-    @Autowired
-    private DruidDbProperties druidDbProperties;
-
-    public DruidDataSource createDataSource(String url, String username, String password) {
-        if (StringUtils.isEmpty(url)) {
+    public DruidDataSource createDataSource() {
+        DruidDbProperties druidDbProperties = new DruidDbProperties();
+        if (StringUtils.isEmpty(druidDbProperties.getUrl())) {
             System.out.println(
                     "Your database connection pool configuration is incorrect!" + " Please check your Spring profile");
             throw new ApplicationContextException("Database connection pool is not configured correctly");
@@ -55,9 +53,9 @@ public abstract class AbstractDruidDBConfig {
 
         DruidDataSource datasource = new DruidDataSource();
 
-        datasource.setUrl(url);
-        datasource.setUsername(username);
-        datasource.setPassword(password);
+        datasource.setUrl(druidDbProperties.getUrl());
+        datasource.setUsername(druidDbProperties.getUsername());
+        datasource.setPassword(druidDbProperties.getPassword());
         // datasource.setDriverClassName(
         // StringUtils.isEmpty(driverClassName) ?
         // druidDbProperties.getDriverClassName() : driverClassName);

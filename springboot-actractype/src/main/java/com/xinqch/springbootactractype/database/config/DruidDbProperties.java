@@ -10,6 +10,8 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "druid")
 public class DruidDbProperties {
 
+    private String url;
+
     private String driverClassName = "com.mysql.jdbc.Driver";
 
     /**
@@ -86,6 +88,14 @@ public class DruidDbProperties {
     private String username = "admin";
 
     private String password = "admin";
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
     public String getDriverClassName() {
         return driverClassName;
