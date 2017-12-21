@@ -1,0 +1,25 @@
+
+spring: 
+   redis: 
+        database: 2
+        host: 47.93.200.92
+        password: freeredisZAQ!
+        port: 6379
+   session: 
+        timeout: 7200
+   http: 
+        multipart:
+            max-file-size: 10MB
+            max-request-size: 10MB
+
+
+#业务数据库链接配置
+jdbc:
+    driverClass: com.mysql.jdbc.Driver
+    url: jdbc:mysql://47.93.200.92/fq_db_test?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&rewriteBatchedStatements=TRUE&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: fq!QAZqiang
+
+
+
+

@@ -1,0 +1,32 @@
+
+spring:
+   thymeleaf:
+        cache: false
+   redis: 
+        database: 2
+        host: 139.129.223.128
+        password: zhenip!QAZRedis
+        port: 3679
+   session: 
+        timeout: 7200
+   http: 
+        multipart:
+            max-file-size: 10MB
+            max-request-size: 10MB
+        
+
+
+#业务数据库链接配置
+jdbc:
+    driverClass: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost/ZZ.TEST?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&rewriteBatchedStatements=TRUE&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: zhenipRootZA@!E
+
+#微服务数据库链接配置
+userUrl: http://60.205.113.21:8089
+payUrl: http://60.205.113.21:8088
+mediaUrl: http://60.205.113.21:8087
+smsUrl: http://139.129.223.128:8090
+
+upload.file.path: /Users/xinqichao/workspace/imgs
