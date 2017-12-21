@@ -13,13 +13,20 @@ spring:
             max-request-size: 10MB
 
 
-#业务数据库链接配置
-jdbc:
-    driverClass: com.mysql.jdbc.Driver
-    url: jdbc:mysql://47.93.200.92/fq_db_test?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&rewriteBatchedStatements=TRUE&zeroDateTimeBehavior=convertToNull
-    username: root
-    password: fq!QAZqiang
+# 数据源配置
+spring:
+      datasource:
+        master:
+            driverClass: com.mysql.jdbc.Driver
+            url: jdbc:mysql://127.0.0.1/xinqch_master?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&rewriteBatchedStatements=TRUE&zeroDateTimeBehavior=convertToNull
+            username: root
+            password: xinqch
 
+         slave:
+            driverClass: com.mysql.jdbc.Driver
+            url: jdbc:mysql://127.0.0.1/xinqch_slave?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&rewriteBatchedStatements=TRUE&zeroDateTimeBehavior=convertToNull
+            username: root
+            password: xinqch
 
 
 
